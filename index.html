@@ -374,6 +374,42 @@
         .debrief-item.success { background: #e8f5e9; border-left: 10px solid var(--secondary); }
         .debrief-item.fail { background: #ffebee; border-left: 10px solid var(--primary); }
 
+        /* WARNING NEXT MISSION ALERT */
+        .next-mission-alert {
+            background: var(--accent);
+            border: var(--border) solid var(--black);
+            box-shadow: 6px 6px 0 var(--black);
+            padding: 20px;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            text-align: center;
+            animation: pulse-alert 2s infinite;
+        }
+
+        .next-mission-alert h3 {
+            color: var(--primary);
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            font-weight: 900;
+            letter-spacing: 1px;
+            text-shadow: 1px 1px 0px var(--white);
+        }
+
+        .next-mission-alert p {
+            font-size: 1.1rem;
+            font-weight: 700;
+            line-height: 1.5;
+            color: var(--black);
+        }
+
+        @keyframes pulse-alert {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.02); box-shadow: 8px 8px 0 var(--black); }
+            100% { transform: scale(1); }
+        }
+
         .footer {
             text-align: center;
             margin-top: 20px;
@@ -390,6 +426,8 @@
             .transition-title { font-size: 2.5rem; }
             .module-icon { font-size: 2.5rem; }
             .module-img-text { font-size: 0.8rem; }
+            .next-mission-alert h3 { font-size: 1.2rem; }
+            .next-mission-alert p { font-size: 1rem; }
         }
     </style>
 </head>
@@ -422,7 +460,7 @@
                     <li>Setiap Modul memiliki batas waktu <strong>3 Menit</strong>. Waktu akan di-reset saat pindah modul.</li>
                     <li>Baca paragraf panduan produk dan perhatikan gambar referensi di layar.</li>
                     <li>Terdapat opsi instruksi palsu/sabotase di dalamnya.</li>
-                    <li><strong>KLIK Teks yang SALAH untuk MENCORET-nya!</strong></li>
+                    <li><strong>KLIK Teks yang SALAH untuk MENCORetnya!</strong></li>
                     <li>❌ <strong>HATI-HATI:</strong> Jika Anda salah dan mencoret prosedur yang BENAR, bom akan bereaksi dan waktu modul dipotong 15 detik!</li>
                 </ol>
             </div>
@@ -482,7 +520,13 @@
                 <!-- Debrief injected via JS -->
             </div>
 
-            <button class="btn" style="margin-top: 20px;" onclick="location.reload()">COBA LAGI</button>
+            <!-- WARNING NEXT MISSION -->
+            <div class="next-mission-alert">
+                <h3>⚠️ PERHATIAN AGEN!</h3>
+                <p>Silakan tutup jendela permainan ini dan kembali ke <strong>Aplikasi Ruang Kerja</strong> untuk melaporkan status misi serta melanjutkan ke modul pembelajaran selanjutnya.</p>
+            </div>
+
+            <button class="btn" style="margin-top: 10px;" onclick="location.reload()">COBA LAGI MISI INI</button>
             <div class="footer">Education & Training Dept. &copy; 2026</div>
         </div>
     </div>
